@@ -1,0 +1,11 @@
+graph TD
+    User([使用者提問]) --> LLM{LLM 思考}
+    LLM -->|需要工具| ToolCall[呼叫 MCP Tool]
+    ToolCall --> Server[MCP Server 執行]
+    Server -->|回傳結果| LLM
+    LLM -->|生成答案| Output([回覆使用者])
+    
+    subgraph "MCP 區域"
+    ToolCall
+    Server
+    end

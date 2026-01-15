@@ -1,0 +1,19 @@
+{
+  "name": "calculate_tax",
+  "description": "根據金額與稅率計算稅金",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "amount": {
+        "type": "number",
+        "description": "交易總金額"
+      },
+      "rate": {
+        "type": "number",
+        "description": "稅率 (如 0.05)",
+        "default": 0.05
+      }
+    },
+    "required": ["amount"]
+  }
+}

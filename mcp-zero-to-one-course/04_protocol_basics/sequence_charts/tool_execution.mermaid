@@ -1,0 +1,13 @@
+sequenceDiagram
+    participant LLM
+    participant Client
+    participant Server
+    
+    LLM->>Client: 請求呼叫工具 (name="add", args={a:1, b:2})
+    Client->>Server: tools/call (JSON-RPC Request)
+    Note right of Client: ID: 1, Method: tools/call
+    
+    Server-->>Client: tools/call response (JSON-RPC Response)
+    Note left of Server: Result: {content: [{text: "3"}]}
+    
+    Client->>LLM: 回傳工具執行結果

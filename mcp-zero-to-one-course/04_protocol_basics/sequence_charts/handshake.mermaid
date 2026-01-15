@@ -1,0 +1,7 @@
+sequenceDiagram
+    participant Client
+    participant Server
+    Client->>Server: initialize (JSON-RPC)
+    Server-->>Client: initialize response (Capabilities)
+    Client->>Server: notifications/initialized
+    Note over Client,Server: 連線建立完成，開始通訊
